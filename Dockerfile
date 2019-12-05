@@ -19,6 +19,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
 
 COPY fluent.conf /fluentd/etc/
 COPY entrypoint.sh /bin/
-RUN chmod +x /bin/entrypoint.sh
+RUN chmod +x /bin/entrypoint.sh \
+    && mkdir -p /var/log/
 
 USER fluent
